@@ -1,0 +1,15 @@
+# remote.index
+#
+# This file contains all file names which should be shown in the load selector of the zweidtlm-applet
+#
+example01.struct
+example02.struct
+example03.struct
+mediamesh.struct
+pointsource01.struct
+pointsource02.struct
+pointsource03.struct
+wavefront01.struct
+wavefront02.struct
+waveguide01.struct
+waveguide02.struct

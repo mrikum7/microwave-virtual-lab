@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<emGine version="0.1"><project name="msl">
+<units>
+  <length>0.001</length>
+  <frequency>1000000000.0</frequency>
+  <time>1</time>
+</units>
+ 
+<materials>
+<material name="Air">
+  <eps_r>1.0</eps_r>
+  <mu_r>1.0</mu_r>
+</material>
+<material name="PEC">
+  <eps_r>1.0</eps_r>
+  <mu_r>1.0</mu_r>
+  <conductivity><INFINITE/></conductivity>
+</material>
+<material name="FR4"><eps_r>4.9</eps_r><mu_r>1</mu_r><conductivity>0</conductivity><tand>0</tand><color a="255" b="0" g="255" r="0"/></material><material name="copper"><eps_r>1.0</eps_r><mu_r>1.0</mu_r><conductivity>0.0</conductivity><tand>0.0</tand></material></materials>
+ 
+<geometry>
+<cube material="FR4" name="substrate"><x1>-49.8</x1><y1>-20</y1><z1>-.5</z1><length_x>99.6</length_x><length_y>40</length_y><length_z>1</length_z></cube><patch material="PEC" name="msl"><x1>-49.800000</x1><y1>-0.885000</y1><z1>0.500000</z1><length_x>99.600000</length_x><length_y>1.770000</length_y></patch></geometry>
+ 
+<signals>
+  <gaussian_differentiated>
+    <frequency_min>1e9</frequency_min>
+    <frequency_max>3e9</frequency_max>
+  </gaussian_differentiated>
+<gaussian_modulated><frequency_min>0.1</frequency_min><frequency_max>3.0</frequency_max></gaussian_modulated></signals>
+ 
+<excitation>
+<voltage_port function="sink" name="Voltage1" needs_reference="true" port_number="1"><x1>-49.800000</x1><y1>0.000000</y1><z1>-0.500000</z1><x2>-49.800000</x2><y2>0.000000</y2><z2>0.500000</z2></voltage_port><voltage_port function="sink" name="Voltage2" needs_reference="true" port_number="2"><x1>49.800000</x1><y1>0.000000</y1><z1>-0.500000</z1><x2>49.800000</x2><y2>0.000000</y2><z2>0.500000</z2></voltage_port></excitation>
+ 
+<boundaries>
+<boundary name="xmin"><boundary_condition type="absorbing"/></boundary><boundary name="xmax"><boundary_condition type="absorbing"/></boundary><boundary name="ymin"><boundary_condition type="absorbing"/></boundary><boundary name="ymax"><boundary_condition type="absorbing"/></boundary><boundary name="zmin"><boundary_condition type="PEC"/></boundary><boundary name="zmax"><boundary_condition type="PEC"/></boundary></boundaries>
+ 
+<simulation id="1e535d7404b54de08fc3a26a3a8a383f">
+  <tlm>
+    <number_of_time_steps>3000</number_of_time_steps>
+    
+  <subsimulations><subsimulation name="p1_ref" simid="f6c6ff77687e4a4db7b69b3562feeac6"/><subsimulation name="p1" simid="31cb6483219441c4bc98e0c625f04667"/><subsimulation name="p2_ref" simid="3517f0207c2e4f7b93a2336fad43b53b"/><subsimulation name="p2" simid="d7763a1135b74a4293d7ca9e23be9f40"/></subsimulations><relative_final_energy_level>-30.0</relative_final_energy_level><mesh coordinates="cartesian" type="uniform"><x1>-49.8</x1><y1>-20.0</y1><z1>-0.5</z1><x2>49.8</x2><y2>20.0</y2><z2>5.0</z2><dx>0.5</dx><dy>0.5</dy><dz>0.5</dz></mesh></tlm>
+</simulation>
+ 
+<results>
+</results>
+<emgine_gui><surrounding_space><x1>0.0</x1><y1>0.0</y1><z1>0.0</z1><x2>0.0</x2><y2>0.0</y2><z2>5.0</z2></surrounding_space><solver_setup><use_solver name="tlmGine"/><solver name="tlmGine"><number_of_time_steps>3000</number_of_time_steps><frequency_min>0.1</frequency_min><frequency_max>3.0</frequency_max><cells_per_lambda>20</cells_per_lambda><boundary_distance_cells>0</boundary_distance_cells><minimum_spatial_resolution active="true">0.25</minimum_spatial_resolution><relative_final_energy_level>-30.0</relative_final_energy_level></solver></solver_setup></emgine_gui></project></emGine>

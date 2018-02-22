@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<emGine version="0.2"><project name="patch antenna">
+<units>
+  <length>1.000000e-003</length>
+  <frequency>1.000000e+009</frequency>
+  <time>1.000000e+000</time>
+</units>
+ 
+<materials>
+<material name="Air">
+  <eps_r>1.0</eps_r>
+  <mu_r>1.0</mu_r>
+</material>
+<material name="PEC">
+  <eps_r>1.0</eps_r>
+  <mu_r>1.0</mu_r>
+  <conductivity><INFINITE/></conductivity>
+</material>
+<material name="New_Material"><eps_r>2.2</eps_r><mu_r>1</mu_r><conductivity>0</conductivity><tand>0</tand><color a="255" b="0" g="255" r="255"/></material></materials>
+ 
+<geometry>
+<cube material="New_Material" name="Box"><x1>-50.000000</x1><y1>-40.000000</y1><z1>-0.785000</z1><length_x>100.000000</length_x><length_y>80.000000</length_y><length_z>1.570000</length_z></cube><patch material="PEC" name="grnd pl"><x1>-50.000000</x1><y1>-40.000000</y1><z1>-0.785000</z1><length_x>100.000000</length_x><length_y>80.000000</length_y></patch><patch material="PEC" name="Patch"><x1>-50.000000</x1><y1>-2.420000</y1><z1>0.785000</z1><length_x>15.000000</length_x><length_y>4.840000</length_y></patch><patch material="PEC" name="l/4"><x1>-35.000000</x1><y1>-0.360000</y1><z1>0.785000</z1><length_x>24.050000</length_x><length_y>0.720000</length_y></patch><patch material="PEC" name="Patch1"><x1>-10.950000</x1><y1>-20.540000</y1><z1>0.785000</z1><length_x>41.080000</length_x><length_y>41.080000</length_y></patch></geometry>
+ 
+<signals>
+  <gaussian_differentiated>
+    <frequency_min>1e9</frequency_min>
+    <frequency_max>3e9</frequency_max>
+  </gaussian_differentiated>
+<gaussian_modulated><frequency_min>0.1</frequency_min><frequency_max>4.0</frequency_max></gaussian_modulated></signals>
+ 
+<excitation>
+<voltage_port function="sink" name="port1" needs_reference="true" port_number="1"><x1>-50.000000</x1><y1>0.000000</y1><z1>-0.785000</z1><x2>-50.000000</x2><y2>0.000000</y2><z2>0.785000</z2></voltage_port></excitation>
+ 
+<boundaries>
+<boundary name="xmin"><boundary_condition type="absorbing"/></boundary><boundary name="xmax"><boundary_condition type="absorbing"/></boundary><boundary name="ymin"><boundary_condition type="absorbing"/></boundary><boundary name="ymax"><boundary_condition type="absorbing"/></boundary><boundary name="zmin"><boundary_condition type="PEC"/></boundary><boundary name="zmax"><boundary_condition type="absorbing"/></boundary></boundaries>
+ 
+<simulation id="f87f95ce55b1409cb4316723b6df5471">
+  <tlm>
+    <number_of_time_steps>5000</number_of_time_steps>
+    
+  <subsimulations><subsimulation name="p1_ref" simid="def847d2cdd54213b73e09ffc2463a66"/><subsimulation name="p1" simid="d8fc74966e844e22a21ea3cdbbf5b9f6"/></subsimulations><relative_final_energy_level>-30.0</relative_final_energy_level><mesh coordinates="cartesian" type="uniform"><x1>-50.0</x1><y1>-40.0</y1><z1>-0.785</z1><x2>50.0</x2><y2>40.0</y2><z2>5.0</z2><dx>0.36</dx><dy>0.36</dy><dz>0.36</dz></mesh></tlm>
+</simulation>
+ 
+<results>
+</results>
+<emgine_gui><solver_setup><use_solver name="tlmGine"/><solver name="tlmGine"><number_of_time_steps>5000</number_of_time_steps><frequency_min>0.1</frequency_min><frequency_max>4.0</frequency_max><cells_per_lambda>40</cells_per_lambda><boundary_distance_cells>0</boundary_distance_cells><minimum_spatial_resolution active="true">0.25</minimum_spatial_resolution><relative_final_energy_level>-30.0</relative_final_energy_level></solver></solver_setup><surrounding_space><x1>0.0</x1><y1>0.0</y1><z1>0.0</z1><x2>0.0</x2><y2>0.0</y2><z2>5.0</z2></surrounding_space></emgine_gui></project></emGine>

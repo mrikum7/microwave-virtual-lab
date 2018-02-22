@@ -1,0 +1,10 @@
+# sturcture file produced by the zweidtlm applet (BB)
+mesh 20 10
+medium 10 10 0 5 2 0
+wall 0 0 0 10 0
+wall 20 0 0 10 1
+wall 0 20 0 0 1
+wall 0 20 10 0 1
+excite 3 1 0 10 15 4 75
+observe 0 20 0 10 field-%.dat
+#

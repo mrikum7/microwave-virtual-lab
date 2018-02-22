@@ -1,0 +1,40 @@
+#Options +FollowSymLinks
+RewriteEngine on
+
+RewriteRule ^update_page-([0-9]+)\.html$ update_page.php?id=$1
+RewriteRule ^update_news-([0-9]+)\.html$ update_news.php?id=$1
+RewriteRule ^update_equipment-([0-9]+)\.html$ update_equipment.php?id=$1
+RewriteRule ^update_user-([0-9]+)\.html$ update_user.php?id=$1
+RewriteRule ^update_faq-([0-9]+)\.html$ update_faq.php?id=$1
+RewriteRule ^change-([0-9]+)\.html$ change.php?id=$1
+RewriteRule ^update_img-([0-9]+)\.html$ update_img.php?id=$1
+RewriteRule ^update_subject-([0-9]+)\.html$ update_subject.php?id=$1
+RewriteRule ^update_contributor-([0-9]+)\.html$ update_contributor.php?id=$1
+RewriteRule ^update_feedback-([0-9]+)\.html$ update_feedback.php?id=$1
+RewriteRule ^update_category-([0-9]+)\.html$ update_category.php?id=$1
+RewriteRule ^update_experiment_feedback-([0-9]+)\.html$ update_experiment_feedback.php?id=$1
+RewriteRule ^del_experiment_feedback-([0-9]+)\.html$ del_experiment_feedback.php?id=$1
+RewriteRule ^update_experiment-([0-9]+)\.html$ update_experiment.php?id=$1
+RewriteRule ^update_theory-([0-9]+)\.html$ update_theory.php?id=$1
+RewriteRule ^update_procedure-([0-9]+)\.html$ update_procedure.php?id=$1
+RewriteRule ^update_assignment-([0-9]+)\.html$ update_assignment.php?id=$1
+RewriteRule ^update_reference-([0-9]+)\.html$ update_reference.php?id=$1
+RewriteRule ^update_self_eval-([0-9]+)\.html$ update_self_eval.php?id=$1
+RewriteRule ^del_equipment-([0-9]+)\.html$ del_equipment.php?id=$1
+RewriteRule ^del_equipment_img-([0-9]+)\.html$ del_equipment_img.php?id=$1
+RewriteRule ^del_img-([0-9]+)\.html$ del_img.php?id=$1
+RewriteRule ^del_contributor-([0-9]+)\.html$ del_contributor.php?id=$1
+RewriteRule ^del_subject-([0-9]+)\.html$ del_subject.php?id=$1
+RewriteRule ^del_subject-([0-9]+)\.html$ del_subject.php?id=$1
+RewriteRule ^del_teacher-([0-9]+)\.html$ del_teacher.php?id=$1
+RewriteRule ^del_student-([0-9]+)\.html$ del_student.php?id=$1
+RewriteRule ^del_category-([0-9]+)\.html$ del_category.php?id=$1
+RewriteRule ^del_news-([0-9]+)\.html$ del_news.php?id=$1
+RewriteRule ^del_newsletter-([0-9]+)\.html$ del_newsletter.php?id=$1
+RewriteRule ^del_faq-([0-9]+)\.html$ del_faq.php?id=$1
+RewriteRule ^del_experiment-([0-9]+)\.html$ del_experiment.php?id=$1
+RewriteRule ^del_theory-([0-9]+)\.html$ del_theory.php?id=$1
+RewriteRule ^del_procedure-([0-9]+)\.html$ del_procedure.php?id=$1
+RewriteRule ^del_assignment-([0-9]+)\.html$ del_assignment.php?id=$1
+RewriteRule ^del_reference-([0-9]+)\.html$ del_reference.php?id=$1
+RewriteRule ^del_self_eval-([0-9]+)\.html$ del_self_eval.php?id=$1

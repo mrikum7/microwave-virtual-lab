@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<emGine version="0.2"><project name="coplanar waveguide">
+<units>
+  <length>1.000000e-003</length>
+  <frequency>1.000000e+009</frequency>
+  <time>1.000000e+000</time>
+</units>
+ 
+<materials>
+<material name="Air">
+  <eps_r>1.0</eps_r>
+  <mu_r>1.0</mu_r>
+</material>
+<material name="PEC">
+  <eps_r>1.0</eps_r>
+  <mu_r>1.0</mu_r>
+  <conductivity><INFINITE/></conductivity>
+</material>
+<material name="Alumina"><eps_r>9.8</eps_r><mu_r>1</mu_r><conductivity>0</conductivity><tand>0</tand><color a="255" b="0" g="255" r="0"/></material></materials>
+ 
+<geometry>
+<cube material="Alumina" name="Substrate"><x1>-4.360000</x1><y1>0.000000</y1><z1>-0.319000</z1><length_x>8.720000</length_x><length_y>5.838000</length_y><length_z>0.638000</length_z></cube><cube material="PEC" name="stripline1"><x1>-4.360000</x1><y1>0.000000</y1><z1>0.319000</z1><length_x>8.720000</length_x><length_y>1.500000</length_y><length_z>0.035000</length_z></cube><cube material="PEC" name="stripline2"><x1>-4.360000</x1><y1>2.119000</y1><z1>0.319000</z1><length_x>8.720000</length_x><length_y>1.600000</length_y><length_z>0.035000</length_z></cube><cube material="PEC" name="stripline3"><x1>-4.360000</x1><y1>4.338000</y1><z1>0.319000</z1><length_x>8.720000</length_x><length_y>1.500000</length_y><length_z>0.035000</length_z></cube><cube material="PEC" name="ground plane"><x1>-4.360000</x1><y1>0.000000</y1><z1>-0.319000</z1><length_x>8.720000</length_x><length_y>5.838000</length_y><length_z>0.035000</length_z></cube></geometry>
+ 
+<signals>
+  <gaussian_differentiated>
+    <frequency_min>1e9</frequency_min>
+    <frequency_max>3e9</frequency_max>
+  </gaussian_differentiated>
+<gaussian_modulated><frequency_min>0.1</frequency_min><frequency_max>10.0</frequency_max></gaussian_modulated></signals>
+ 
+<excitation>
+<voltage_port function="sink" name="2" needs_reference="true" port_number="1"><x1>-4.360000</x1><y1>1.809500</y1><z1>-0.319000</z1><x2>-4.360000</x2><y2>1.809500</y2><z2>0.319000</z2></voltage_port><voltage_port function="sink" name="1" needs_reference="true" port_number="2"><x1>-4.360000</x1><y1>1.809500</y1><z1>-0.319000</z1><x2>-4.360000</x2><y2>1.809500</y2><z2>0.319000</z2></voltage_port></excitation>
+ 
+<boundaries>
+<boundary name="xmin"><boundary_condition type="absorbing"/></boundary><boundary name="xmax"><boundary_condition type="absorbing"/></boundary><boundary name="ymin"><boundary_condition type="absorbing"/></boundary><boundary name="ymax"><boundary_condition type="absorbing"/></boundary><boundary name="zmin"><boundary_condition type="PEC"/></boundary><boundary name="zmax"><boundary_condition type="absorbing"/></boundary></boundaries>
+ 
+<simulation id="7550081fc1094e47bfa621efdbeaf4c6">
+  <tlm>
+    <number_of_time_steps>5000</number_of_time_steps>
+    
+  <relative_final_energy_level>-30.0</relative_final_energy_level><mesh coordinates="cartesian" type="uniform"><x1>-4.36</x1><y1>0.0</y1><z1>-0.319</z1><x2>4.36</x2><y2>5.838</y2><z2>500.0</z2><dx>0.5</dx><dy>0.5</dy><dz>0.5</dz></mesh><subsimulations><subsimulation name="p2" simid="89d1d955d2784273b773008f23f5cc3c"/><subsimulation name="p3" simid="782ecf94a3334f0f975d3a45f0a5698d"/><subsimulation name="p1" simid="6cae199cd1bb4c008aa41ca35c964ddf"/><subsimulation name="p1_ref" simid="7bb0b7f0a90949ac938667f76f21aa7f"/></subsimulations></tlm>
+</simulation>
+ 
+<results>
+</results>
+<emgine_gui><surrounding_space><x1>0.0</x1><y1>0.0</y1><z1>0.0</z1><x2>0.0</x2><y2>0.0</y2><z2>500.0</z2></surrounding_space><solver_setup><use_solver name="tlmGine"/><solver name="tlmGine"><number_of_time_steps>5000</number_of_time_steps><frequency_min>0.1</frequency_min><frequency_max>10.0</frequency_max><cells_per_lambda>10</cells_per_lambda><boundary_distance_cells>0</boundary_distance_cells><minimum_spatial_resolution active="true">0.5</minimum_spatial_resolution><relative_final_energy_level>-30.0</relative_final_energy_level></solver></solver_setup></emgine_gui></project></emGine>

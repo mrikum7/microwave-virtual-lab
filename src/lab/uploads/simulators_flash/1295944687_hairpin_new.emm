@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<emGine version="0.2"><project name="hairpin_new">
+<units>
+  <length>1.000000e-003</length>
+  <frequency>1.000000e+009</frequency>
+  <time>1.000000e+000</time>
+</units>
+ 
+<materials>
+<material name="Air">
+  <eps_r>1.0</eps_r>
+  <mu_r>1.0</mu_r>
+</material>
+<material name="PEC">
+  <eps_r>1.0</eps_r>
+  <mu_r>1.0</mu_r>
+  <conductivity><INFINITE/></conductivity>
+</material>
+<material name="New_Material"><eps_r>6.15</eps_r><mu_r>1</mu_r><conductivity>0</conductivity><tand>0</tand><color a="255" b="0" g="255" r="0"/></material></materials>
+ 
+<geometry>
+<cube material="New_Material" name="substrate"><x1>-15.600000</x1><y1>-15.000000</y1><z1>-0.635000</z1><length_x>31.200000</length_x><length_y>30.000000</length_y><length_z>1.270000</length_z></cube><patch material="PEC" name="1"><x1>-11.000000</x1><y1>-9.200000</y1><z1>0.635000</z1><length_x>1.000000</length_x><length_y>17.400000</length_y></patch><patch material="PEC" name="feedline"><x1>-15.600000</x1><y1>-4.500000</y1><z1>0.635000</z1><length_x>4.600000</length_x><length_y>1.850000</length_y></patch><patch material="PEC" name="2"><x1>-11.000000</x1><y1>-9.200000</y1><z1>0.635000</z1><length_x>4.000000</length_x><length_y>1.000000</length_y></patch><patch material="PEC" name="3"><x1>-8.000000</x1><y1>-9.200000</y1><z1>0.635000</z1><length_x>1.000000</length_x><length_y>18.400000</length_y></patch><patch material="PEC" name="4"><x1>-6.600000</x1><y1>-9.200000</y1><z1>0.635000</z1><length_x>1.000000</length_x><length_y>18.400000</length_y></patch><patch material="PEC" name="5"><x1>-6.600000</x1><y1>8.200000</y1><z1>0.635000</z1><length_x>4.000000</length_x><length_y>1.000000</length_y></patch><patch material="PEC" name="6"><x1>-3.600000</x1><y1>-9.200000</y1><z1>0.635000</z1><length_x>1.000000</length_x><length_y>18.400000</length_y></patch><patch material="PEC" name="7"><x1>-2.000000</x1><y1>-9.200000</y1><z1>0.635000</z1><length_x>1.000000</length_x><length_y>18.400000</length_y></patch><patch material="PEC" name="8"><x1>-2.000000</x1><y1>-9.200000</y1><z1>0.635000</z1><length_x>4.000000</length_x><length_y>1.000000</length_y></patch><patch material="PEC" name="9"><x1>1.000000</x1><y1>-9.200000</y1><z1>0.635000</z1><length_x>1.000000</length_x><length_y>18.400000</length_y></patch><patch material="PEC" name="10"><x1>2.600000</x1><y1>-9.200000</y1><z1>0.635000</z1><length_x>1.000000</length_x><length_y>18.400000</length_y></patch><patch material="PEC" name="11"><x1>2.600000</x1><y1>8.200000</y1><z1>0.635000</z1><length_x>4.000000</length_x><length_y>1.000000</length_y></patch><patch material="PEC" name="12"><x1>5.600000</x1><y1>-9.200000</y1><z1>0.635000</z1><length_x>1.000000</length_x><length_y>18.400000</length_y></patch><patch material="PEC" name="13"><x1>7.000000</x1><y1>-9.200000</y1><z1>0.635000</z1><length_x>1.000000</length_x><length_y>18.400000</length_y></patch><patch material="PEC" name="14"><x1>7.000000</x1><y1>-9.200000</y1><z1>0.635000</z1><length_x>4.000000</length_x><length_y>1.000000</length_y></patch><patch material="PEC" name="15"><x1>10.000000</x1><y1>-9.200000</y1><z1>0.635000</z1><length_x>1.000000</length_x><length_y>17.400000</length_y></patch><patch material="PEC" name="feedline2"><x1>11.000000</x1><y1>-4.500000</y1><z1>0.635000</z1><length_x>4.600000</length_x><length_y>1.850000</length_y></patch></geometry>
+ 
+<signals>
+  <gaussian_differentiated>
+    <frequency_min>1e9</frequency_min>
+    <frequency_max>3e9</frequency_max>
+  </gaussian_differentiated>
+<gaussian_modulated><frequency_min>0.1</frequency_min><frequency_max>6.0</frequency_max></gaussian_modulated></signals>
+ 
+<excitation>
+<voltage_port function="sink" name="port1" needs_reference="true" port_number="1"><x1>-15.600000</x1><y1>-3.575000</y1><z1>-0.635000</z1><x2>-15.600000</x2><y2>-3.575000</y2><z2>0.635000</z2></voltage_port><voltage_port function="sink" name="port2" needs_reference="true" port_number="2"><x1>15.600000</x1><y1>-3.575000</y1><z1>-0.635000</z1><x2>15.600000</x2><y2>-3.575000</y2><z2>0.635000</z2></voltage_port></excitation>
+ 
+<boundaries>
+<boundary name="xmin"><boundary_condition type="absorbing"/></boundary><boundary name="xmax"><boundary_condition type="absorbing"/></boundary><boundary name="ymin"><boundary_condition type="absorbing"/></boundary><boundary name="ymax"><boundary_condition type="absorbing"/></boundary><boundary name="zmin"><boundary_condition type="PEC"/></boundary><boundary name="zmax"><boundary_condition type="absorbing"/></boundary></boundaries>
+ 
+<simulation id="7982f8fde59e4e379c953b747d0b0098">
+  <tlm>
+    <number_of_time_steps>10000</number_of_time_steps>
+    
+  <subsimulations><subsimulation name="p1_ref" simid="3c607c72e19f46a093077e8b830c1acb"/><subsimulation name="p1" simid="5a0fd0e2eb3146b2998e901737169970"/><subsimulation name="p2_ref" simid="e68dffd536c042e5b02110e43ddbdb4f"/><subsimulation name="p2" simid="d6721582e9e24f4badc56ce5818bed0a"/></subsimulations><relative_final_energy_level>-30.0</relative_final_energy_level><mesh coordinates="cartesian" type="uniform"><x1>-15.6</x1><y1>-15.0</y1><z1>-0.635</z1><x2>15.6</x2><y2>15.0</y2><z2>1000.0</z2><dx>0.5</dx><dy>0.5</dy><dz>0.5</dz></mesh></tlm>
+</simulation>
+ 
+<results>
+</results>
+<emgine_gui><surrounding_space><x1>0.0</x1><y1>0.0</y1><z1>0.0</z1><x2>0.0</x2><y2>0.0</y2><z2>1000.0</z2></surrounding_space><solver_setup><use_solver name="tlmGine"/><solver name="tlmGine"><number_of_time_steps>10000</number_of_time_steps><frequency_min>0.1</frequency_min><frequency_max>6.0</frequency_max><cells_per_lambda>10</cells_per_lambda><boundary_distance_cells>0</boundary_distance_cells><minimum_spatial_resolution active="true">0.5</minimum_spatial_resolution><relative_final_energy_level>-30.0</relative_final_energy_level></solver></solver_setup></emgine_gui></project></emGine>

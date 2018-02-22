@@ -1,0 +1,233 @@
+<html>
+<head>
+   <title>2D-TLM java applet</title>
+   <meta name="author" content="Bernhard Bader">
+   <meta name="description" content="2-D TLM in Java">
+   <meta name="Keywords" content="java, applet, tlm, transmission line matrix method, time domain, simulation, electromagnetic, wave">
+</head>
+<body text="#000000" bgcolor="#cccccc" link="#0000cc" vlink="#663366" alink="#663366">
+
+<table width=100%>
+<tr valign=bottom>
+<td align=left>&nbsp;</td><td align=center>
+<a name="top"><h1>Two-dimensional <a href="#tlm">TLM</a> in Java</h1></a>
+</td><td align=right>
+<a href="http://www.fbh-berlin.de/people/bader/java-tlm/index-deutsch.html#top">deutsch</a>
+</td></tr>
+</table>
+<p>
+
+<h3>A quick start</h3>
+If you want to do a short try of the TLM simulation program, I recommend to follow these steps:
+<ul type=circle>
+<li>Read the next four points. Then start the 2d TLM program with a mouse click on <b><a href="zweidtlm.html">Start</a></b>.
+Your browser will load the TLM Java applet and display it in a new page. The TLM mesh will be shown in the main part of
+the applet window. Now, the geometry of a structure must be entered.
+<li>To edit the structure, press <b>Edit</b>. A second window appears. It is called <em>edit window</em>.
+Click on the <b>load structure</b> button and select one of the prepared example files (e. g. <b>example01.struct</b>).
+Then press <b>Ok</b>. The program will load the file and display the geometry in the applet window.
+<li>Now close the edit window with a mouse click on <b>Done</b>.
+<li>Press the <b>Run</b> button. The two-dimensional TLM simulation will start. The current field values in the TLM
+mesh are displayed in the applet window. Therefore the field amplitudes are mapped on a color range from blue to yellow.
+The display updates parallely with the simulation. This allows an easy observation of the propagation of the electromagnetic
+field.
+<li>Here we go! Load the <a href="zweidtlm.html">2d TLM program</a>.
+<li>If you prefer smaller TLM cells, start the <a href="http://www.fbh-berlin.de/people/bader/java-tlm/zweidtlm-a.html">2d TLM program with smaller cells</a>.
+</ul>
+
+<h3>Editing the geometry</h3>
+Try to edit your own structure. It is not difficult to enter a new geometry into the mesh of the TLM applet.
+Click on the <b>Edit</b> button and open the edit window. Enter the width and height of the new mesh
+in the field <b>nx=</b> and <b>ny=</b>. Then press <b>new/clear</b>. The size of the mesh in the main
+windows changes to the new size. All structure elements entered previously disappear.
+<p>
+Now, draw walls, fill in media, and set field excitations:
+<p>
+Select the wall type. You can choose from an ideal <b>electric wall</b>, an ideal
+<b>magnetic wall</b>, and a <b>s</b>imple <b>absorbing wall</b>. Use the mouse to draw
+the walls in the TLM mesh. The number of walls is not restricted.
+If you did a mistake and want to delete a wall, select the wall
+with a short mouse click. The selected structure element will become red. Then you can delete
+the wall with the <b>delete item</b> button in the edit window.
+If the first mouse click on the wall does not select the right element, you must repeat
+the the mouse click until the correct element is selected.
+<p>
+If you want to use media in the structure, you have to activate <b>medium</b> in the edit windows
+and enter the desired media parameters. <b>eps_r</b> is the relative dielectricity, and <b>g_loss</b>
+is the loss factor of the medium. Use the mouse to fill the TLM mesh with medium.
+You can enter as many types and areas of media as you like.
+If you want to delete a area with medium, select the area (the selected area is marked with a red rectangle),
+and push the <b>delete item</b> button.
+<p>
+The field excitation is very important. If you forget to set a field excitation in the TLM mesh,
+all field components in all TLM cells remain zero, and the simulation is rather boring.
+In this TLM simulator, the field can be excited with a time domain gaussian pulse.
+Select <b>gaussian pulse</b> in the edit window, then enter the parameters of the pulse.
+The field <b>t_max</b> contains the time step number of the maximum of the gaussian pulse.
+<b>sigma</b> corresponds to the pulse width, and <b>ampl</b> is its maximum value.
+As a rule of thumb, <b>t_max</b> should be at least three times <b>sigma</b>.<br>
+It is possible to set more than one excitation in the mesh.
+<p>
+The TLM applet allows to save the field sequence during simulation. Select <b>observe field</b>
+and mark an area of the TLM mesh. Prior to this, you should enter the <b>filename</b> of the
+result file. Two cases are to distinguish. The behaviour of the program depends on whether the
+filename contains a %-character or not:<br>
+a) The filename contains the %-character: After every timestep a new file will be created. In the
+filename the %-character is substituted with the current timestep number.
+This file format is suitable for observing large areas.<br>
+b) The filename contains no %-character: One file will be created. The timestep number,
+the cell coordinates, and the field amplitudes of the selected TLM-cells will be written
+into the file after every timestep. This file format is suitable for observing single cells.<br>
+<b>Tip:</b> The observation function does not work in the www-browser programs. It is not
+possible to create and write files from an applet running in browsers. It is only possible
+to use this feature, if you run the TLM applet program directly with you Java interpreter.
+<p>
+All parameters of media, walls, excitations, and field observations can be changed easily.
+Select the object of which you want to change the properties with a short mouse click.
+Now, you can edit its properties in the edit window, e. g. turn an electric wall into an
+magnetic wall. Then press the <b>apply</b> button to accept the changes.
+<p>
+If you use a Java interpreter to run the TLM applet, then you can save the structure geometry
+into a file. To that, press the <b>save structure</b> button. You can read and edit the
+geometry data later.
+<p>
+When the editing is finished, close the edit windows with the <b>Done</b> button and
+start the two-dimensional TLM simulation with <b>Run</b>.
+
+<h3>Running the TLM simulation</h3>
+The simulation speed can be controlled by the <b>Slower</b> and <b>Faster</b> buttons.
+The current speed value is displayed in the number field between these two buttons.
+The lowest value is 0 (very slow), the highest value is 100 (maximum calculation speed).
+If you want to watch the propagation of a nice wave front, then you can slow down the
+calculation speed by pressing the buttons.
+It is also possible to enter the speed value directly into the number field via keyboard.<br>
+A click on <b>Pause</b> stops the calculation. An additional mouse click on the same button,
+which is now labeled <b>Cont</b>, will continue the simulation. If you want to restart the
+TLM simulation at zero, you should press <b>Pause</b> and then <b>Restart</b>. This will
+clear all field amlitudes in all TLM cells and start the simulation again.<br>
+The <b>scale</b>-selector allows you to choose the color-scaling methods. In principle,
+the the display procedure of the TLM applet maps the field amplitudes on colors, which
+range from blue to yellow. The blue color corresponds to a negative field value, yellow means
+positive. A zero field is always displayed black. The scaling of the field-color mapping
+is done with one of the following methods:
+<ul type=circle>
+<li><b>autoscale</b>: The TLM applet does a color scaling after every timestep. The color range
+is scaled to the absolute maximum of all field components in the TLM mesh. This means, the
+color assignment is adapted regularly.
+<li><b>scale=max</b>: The TLM applet does a color scaling only, if the absolute maximum of all
+field components in the TLM mesh is greater then the maximum of all timesteps before. This
+means, the colors are mapped to the maximum field amplitude of the current and former timesteps of
+the simulation.
+<li><b>scale=min</b>: This selection is similar to the <b>scale=max</b> selection. Here
+the TLM applet only does scaling, if the absolute maximum of all field components in the mesh
+is smaller then the former maximum. This means, the colors are mapped to the smallest maximum
+field value of the current and former timesteps of the simulation.
+<li><b>scale=fix</b>: The current color-field scaling will be frozen. No additional scaling 
+is done.
+</ul>
+If the selection is changed, the maximum field value of all former timesteps will be cleared.
+The maximum of the field-color mapping is always kept greater than 0.05.
+
+<h3>Using a Java interpreter</h3>
+If you want to use all features of the two-dimensional TLM java program, you should download the archive and
+run the program with your java interpreter. In addition to the applet version all geometry data and
+simulation results can be stored in files.
+<br>
+Load the archive file <a href="http://www.fbh-berlin.de/people/bader/java-tlm/zweidtlm.zip">zweidtlm.zip</a>, and extract the jar file
+and the structure definition files
+into a sub-directory. Take care not to destroy the long file names.
+Start the 2d TLM java program with:
+<ul><tt>
+  java -jar zweidtlm.jar
+</tt></ul>
+Internet Explorer fans enter this command line:
+<ul><tt>
+  jview /cp zweidtlm.jar zweidtlm
+</tt></ul>
+in the DOS window of Windows. The program starts and the applet window opens. The usage of the program is almost
+identical to the usage of the applet in a browser. In difference to the browser version, the <b>Save Structure</b> button
+can be used. This allows to save the geometry to use it later. These geometry data can be read also from
+the TLM applet running in a browser. Additionally all <em>observation field</em> data will be saved during simulation.
+These data files can easily be analysed or displayed with other programs, e. g. <b>Gnuplot</b>.
+<p>
+The size of the TLM mesh can be selected by the command line switch <tt>-cs</tt> followed by the mesh distance in pixel:
+<ul><tt>
+  java -jar zweidtlm.jar -cs 6
+</tt></ul>
+The program will show all possible parameters when the command line switch <tt>-h</tt> is used.
+<p>
+
+<h3>Hints</h3>
+<b>smaller TLM cells</b><br>
+The following link starts the TLM applet with smaller TLM cells. It uses the same program files
+as the applet with normal sized cells. Here, the <b>cellsize</b> parameter in the HTLM-file is
+set to a smaller value.<br>
+<a href="http://www.fbh-berlin.de/people/bader/java-tlm/zweidtlm-a.html">Start 2d-TLM with smaller cells.</a>
+<p>
+<!-- The problem with different types of scrollbars is fixed.
+<b>Scrollbars</b><br>
+Obviously, the scrollbars of Java version 1.0 differ from the scrollbars of version 1.1. Interestingly enough,
+not all WWW-browsers apply this difference. This means, the automatic identification sometimes does not work.
+If the 2d-TLM applet does not display the scrollbars correctly, i. e. the TLM mesh cannot be moved to
+its borders, or the the mesh can be moved out of its window, then you should override the scrollbar
+recognition with one of the following links:
+<ul type=circle>
+<li><a href="http://www.fbh-berlin.de/people/bader/java-tlm/zweidtlm-c.html">2d-TLM program with Java 1.0 scrollbars.</a>
+<li><a href="http://www.fbh-berlin.de/people/bader/java-tlm/zweidtlm-d.html">2d-TLM program with Java 1.1 scrollbars.</a>
+</ul>
+<p>
+-->
+<b>Tests</b><br>
+Version 1.0b of the applet has been tested with MS Internet Explorer 3 (Windows95), IE4 (Windows 95),
+Netscape 3 (Windows 95, Digital-Unix, Linux, HP-UX),
+Netscape Communicator 4 (Windows 95, Sun Sparc), JDK1.0.2 (Linux, Digital-Unix), and JDK1.1.1 (Linux).<br>
+The current version 1.0c of the applet has been tested with IE5 (Windows 98), Netscape 4.73 (Windows 98),
+Netscape 4.5 (Linux), JDK 1.3.0 (Windows 98), and JDK 1.1.7 (Linux).
+<p>
+<b>The Java program does not start</b><br>
+Some WWW-browsers have difficulties to run Java programs, when the environment variable <tt>CLASSPATH</tt>
+is set. If the <tt>CLASSPATH</tt> variable is set improperly, the Java virtual-machine will not find
+its libraries and the applet window will remain empty. In this case, one should delete the
+<tt>CLASSPATH</tt> variable and start the browser again. In a C shell on Unix systems simply enter
+<b><tt>unsetenv CLASSPATH</tt></b> to remove the environment variable. (Usually, the <tt>CLASSPATH</tt> variable
+is used by the java compiler and debugger.)
+<p>
+<b>Green Threads</b><br>
+Very rarely the applet blocks the browser program. This problem only appears if Netscape&nbsp;3 is used
+and the simulation speed is set to the maximum value <b>100</b>. I think, the problem
+is related with netscape's multi-threading model. Unfortunately, I have no clue how to fix it.<br>
+Tip: Netscape&nbsp;3 users should use maximum speed <b>99</b>.
+<p>
+Send your comments to: <a href="mailto:bernhard.bader@gmx.de">Bernhard Bader</a>.
+<p>
+<hr noshade size=2 color=#909090>
+<p>
+<a name="tlm"><h2>What is TLM?</h2></a>
+The simulation method used in this Java program is named <b>T</b>ransmission-<b>L</b>ine-<b>M</b>atrix method, which is abbreviated
+as TLM. Transmission-Line-Matrix modelling is a numerical method for solving electromagnetic field problems.
+It is based on the analogy of the propagation of electromagnetic waves and electric impulses travelling in a network of transmission
+lines.
+<p>
+Line structures or other devices, which are to be examined, must be modelled on the TLM mesh. Then the
+Java program calculates the electric and magnetic fields in time domain.
+From these results the properties (e. g. scattering parameters) of the examined structures can be derived.
+TLM is not restricted to two-dimensional structures. It can be used to calculate three-dimensional problems, too.
+<p>
+Additional information on the three-dimensional TLM method and its development into the
+Alternating-<wbr>Transmission-Line-Matrix methode (ATLM) can be obtained here:
+<a href="http://www.fbh-berlin.de/people/bader/index.html#atlm">Untersuchung der ATLM-Methode</a> (in German).
+<p>
+<hr noshade size=2 color=#909090>
+<p>
+<table width=100%>
+<tr valign=bottom>
+<td align=left>
+&copy; 1997, 2000 <a href="mailto:bernhard.bader@gmx.de">Bernhard Bader</a>
+</td><td align=right>
+Zur <a href="http://www.fbh-berlin.de">FBH-Seite</a>.
+</td></tr>
+</table>
+<!--Vielen Dank fuer die Beachtung aller Sicherheitsmassnahmen. B.B.-->
+</body>
+</html>
+

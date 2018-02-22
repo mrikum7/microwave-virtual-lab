@@ -1,0 +1,17 @@
+# sturcture file produced by the zweidtlm applet (BB)
+mesh 40 40
+medium 11 7 32 8 2 0.05
+medium 18 8 32 8 3 0.1
+medium 26 7 32 8 4 0.15
+medium 33 7 32 8 5 0.2
+wall 0 40 0 0 1
+wall 40 0 0 40 1
+wall 0 40 40 0 1
+wall 0 33 8 0 1
+wall 7 33 16 0 1
+wall 0 33 24 0 1
+wall 7 33 32 0 1
+wall 0 0 8 32 1
+wall 0 0 0 8 1
+excite 0 1 0 8 30 8 80
+#

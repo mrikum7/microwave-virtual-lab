@@ -1,0 +1,154 @@
+@charset "utf-8";
+/* CSS Document for Harvest Interactive Education Portal Admin Panel */
+
+/* --------------- # # -- CSS GLOBAL RESET -- # # --------------- (DO NOT CHANGE) */
+body {
+	margin:0;
+	padding:0;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#434343;
+	font-size:13px;
+}
+html {
+	min-height:100%;
+	margin-bottom:1px;
+	overflow:-moz-scrollbars-vertical !important;
+}
+a, img, ul, li {
+	border:0;
+	outline-style:none;
+}
+input, a, img, p {
+	margin:0;
+	padding:0;
+}
+h1, h2, h3, h4, h5, h6 {
+	margin:0;
+	padding:0;
+}
+/*--------------- # # -- CONTAINERS -- # # ---------------*/
+h2 {
+	color:#012943;
+}
+.outer {
+	background-color:#ddeffb;
+	padding:20px;
+}
+.panel1 {
+	border:1px solid #dcdcdc;
+	background-color:#FFFFFF;
+}
+/*--------------- # # -- NAVIGATION -- # # ---------------*/
+.nav td {
+	border:1px solid #dddddd;
+	padding:10px 0;
+}
+.nav a {
+	background-color:#f6f6f6;
+	padding:10px 16px;
+	text-decoration:none;
+	font-weight:bold;
+	text-align:center;
+	border-right:1px solid #dddddd;
+	color:#454545;
+}
+.nav a:hover {
+	background:url(../images/nav_1.jpg) left top repeat-x;
+}
+.nav a.current {
+	padding:10px 16px;
+	text-decoration:none;
+	font-weight:bold;
+	text-align:center;
+	border-right:1px solid #dddddd;
+	color:#454545;
+	background:url(../images/nav_1.jpg) left top repeat-x;
+}
+/*--------------- # # -- SIDEBAR -- # # ---------------*/
+.sidebar_outer {
+	padding:0 18px 0 0;
+}
+.sidebar {
+	border:1px solid #dddddd;
+}
+.sidebar a {
+	width:200px;
+	background-color:#0D8BE0;
+	border-bottom:1px solid #dddddd;
+	color:#ffffff;
+	font-weight:bold;
+	padding:10px 12px;
+	text-decoration:none;
+	display:block;
+}
+.sidebar a:hover {
+	background-color:#FF9817;
+	color:#ffffff;
+}
+
+.sidebar a.active {
+	background:#ff9817;
+	color:#ffffff;
+}
+.textbox {
+	border:1px solid #999999;
+	width:260px;
+	padding:3px;
+}
+/*--------------- # # -- FORM -- # # ---------------*/
+.textarea {
+	border:1px solid #999999;
+	padding:3px;
+	width:260px;
+}
+.dropdown {
+	border:1px solid #999999;
+	width:268px;
+	padding:3px;
+}
+/*--------------- # # -- ANCHORS -- # # ---------------*/
+a.gray {
+	color:#6f6f6f;
+	text-decoration:underline;
+}
+a.gray:hover {
+	text-decoration:none;
+}
+a.green {
+	color:#012943;
+	text-decoration:underline;
+}
+a.green:hover {
+	text-decoration:none;
+}
+/*--------------- # # -- GRID -- # # ---------------*/
+.grid {
+	border-left:1px solid #dddddd;
+	border-top:1px solid #dddddd;
+}
+.grid td {
+	border-right:1px solid #dddddd;
+	border-bottom:1px solid #dddddd;
+	padding:5px;
+	background-color:#ffffff;
+}
+.grid td.hd {
+	background-color:#ff9817;
+	color:#FFFFFF;
+	font-weight:bold;
+}
+
+.grid td.hd a {
+	color:#ffffff;
+	text-decoration:underline;
+}
+.grid td.hd a:hover {
+	text-decoration:none;
+}
+.error {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	color: #F00;
+	text-decoration: none;
+}

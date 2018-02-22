@@ -1,0 +1,6 @@
+# sturcture file produced by the zweidtlm applet (BB)
+mesh 30 40
+wall 20 10 14 0 -1
+wall 20 0 0 14 -1
+excite 10 1 23 1 15 4 25
+#

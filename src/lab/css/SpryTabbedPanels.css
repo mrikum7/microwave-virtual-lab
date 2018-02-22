@@ -1,0 +1,53 @@
+@charset "UTF-8";
+.TabbedPanels {
+	margin: 0px;
+	padding: 0px;
+	clear: none;
+	position: relative;
+	width:100%; /* IE Hack to force proper layout when preceded by a paragraph. (hasLayout Bug)*/
+}
+.TabbedPanelsTabGroup {
+	margin: 0px;
+	padding: 0px;
+}
+.TabbedPanelsTab {
+	position: relative;
+	top:1px;
+	left:15px;
+	float: left;
+	padding:5px 15px;
+	margin: 0 5px 0 0;
+	color:#ffffff;
+	font-weight:bold;
+	list-style:none;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	cursor: pointer;
+	background:#0b79c4 url(../images/tab_bg.jpg) repeat-x;
+	border-left:1px solid #117fca;
+	border-top:1px solid #117fca;
+	border-right:1px solid #117fca;
+	text-align:center;
+}
+.TabbedPanelsTabHover {
+	background:#eeeeee;
+	color:#012943;
+	border-left:1px solid #cdd2d6;
+	border-top:1px solid #cdd2d6;
+	border-right:1px solid #cdd2d6;
+}
+.TabbedPanelsTabSelected {
+	background:#eeeeee;
+	color:#012943;
+	border-left:1px solid #cdd2d6;
+	border-top:1px solid #cdd2d6;
+	border-right:1px solid #cdd2d6;
+}
+.TabbedPanelsContentGroup {
+	clear: both;
+}
+.TabbedPanelsContent {
+	padding:0;
+}
+.TabbedPanelsContentVisible {
+}

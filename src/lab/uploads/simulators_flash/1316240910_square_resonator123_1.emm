@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<emGine version="0.2"><project name="square resonator1">
+<units>
+  <length>1.000000e-03</length>
+  <frequency>1.000000e+09</frequency>
+  <time>1.000000e+00</time>
+</units>
+ 
+<materials>
+<material name="Air">
+  <eps_r>1.0</eps_r>
+  <mu_r>1.0</mu_r>
+</material>
+<material name="PEC">
+  <eps_r>1.0</eps_r>
+  <mu_r>1.0</mu_r>
+  <conductivity><INFINITE/></conductivity>
+</material>
+<material name="FR4"><eps_r>5.5</eps_r><mu_r>1</mu_r><conductivity>0</conductivity><tand>0</tand><color a="255" b="128" g="255" r="0"/></material></materials>
+ 
+<geometry>
+<cube material="FR4" name="substrate"><x1>-37.785800</x1><y1>-20.000000</y1><z1>-0.550000</z1><length_x>75.571600</length_x><length_y>40.000000</length_y><length_z>1.100000</length_z></cube><patch dimension="2" hlevel="0" material="PEC" name="line1"><x1>-37.785800</x1><y1>-0.885000</y1><z1>0.550000</z1><length_x>24.925000</length_x><length_y>1.770000</length_y></patch><patch dimension="2" hlevel="0" material="PEC" name="line2"><x1>12.860800</x1><y1>-0.885000</y1><z1>0.550000</z1><length_x>24.900000</length_x><length_y>1.770000</length_y></patch><patch dimension="2" hlevel="0" material="PEC" name="srl1"><x1>-12.450000</x1><y1>-12.450000</y1><z1>0.550000</z1><length_x>1.770000</length_x><length_y>24.900000</length_y></patch><patch dimension="2" hlevel="0" material="PEC" name="srl2"><x1>-10.680000</x1><y1>-12.450000</y1><z1>0.550000</z1><length_x>21.360000</length_x><length_y>1.770000</length_y></patch><patch dimension="2" hlevel="0" material="PEC" name="srl3"><x1>10.680000</x1><y1>-12.450000</y1><z1>0.550000</z1><length_x>1.770000</length_x><length_y>24.900000</length_y></patch><patch dimension="2" hlevel="0" material="PEC" name="srl4"><x1>-10.680000</x1><y1>10.680000</y1><z1>0.550000</z1><length_x>21.360000</length_x><length_y>1.770000</length_y></patch></geometry>
+ 
+<signals>
+  <gaussian_differentiated>
+    <frequency_min>1e9</frequency_min>
+    <frequency_max>3e9</frequency_max>
+  </gaussian_differentiated>
+<gaussian_modulated><frequency_min>0.1</frequency_min><frequency_max>20.0</frequency_max></gaussian_modulated></signals>
+ 
+<excitation>
+<voltage_port function="sink" name="V1" needs_reference="true" port_number="1"><x1>-37.785800</x1><y1>0.010000</y1><z1>-0.550000</z1><x2>-37.785800</x2><y2>0.010000</y2><z2>0.550000</z2></voltage_port><voltage_port function="sink" name="V2" needs_reference="true" port_number="2"><x1>37.785800</x1><y1>0.010000</y1><z1>-0.550000</z1><x2>37.785800</x2><y2>0.010000</y2><z2>0.550000</z2></voltage_port></excitation>
+ 
+<boundaries>
+<boundary name="xmin"><boundary_condition type="absorbing"/></boundary><boundary name="xmax"><boundary_condition type="absorbing"/></boundary><boundary name="ymin"><boundary_condition type="absorbing"/></boundary><boundary name="ymax"><boundary_condition type="absorbing"/></boundary><boundary name="zmin"><boundary_condition type="PEC"/></boundary><boundary name="zmax"><boundary_condition type="absorbing"/></boundary></boundaries>
+ 
+<simulation id="75851b29ab3f43fcaafed81adfa5e891">
+  <tlm>
+    <number_of_time_steps>15000</number_of_time_steps>
+    
+  <relative_final_energy_level>-30.0</relative_final_energy_level><subsimulations><subsimulation name="p1_ref" simid="2e37962b5d30475c86874eb0b24beabd"/><subsimulation name="p2" simid="cbf9162a3b6d42a98126f1754cc8bc73"/><subsimulation name="p1" simid="900649384bcd4a61b03d82c6db4db856"/><subsimulation name="p2_ref" simid="402814dd056c4c7289fd7c104af938ca"/></subsimulations><mesh coordinates="cartesian" type="uniform"><x1>-37.7858</x1><y1>-20.0</y1><z1>-0.55</z1><x2>37.7858</x2><y2>20.0</y2><z2>5.0</z2><dx>0.25</dx><dy>0.25</dy><dz>0.25</dz></mesh></tlm>
+</simulation>
+ 
+<results>
+</results>
+<emgine_gui><surrounding_space><x1>0.0</x1><y1>0.0</y1><z1>0.0</z1><x2>0.0</x2><y2>0.0</y2><z2>5.0</z2></surrounding_space><solver_setup><use_solver name="tlmGine"/><solver name="tlmGine"><number_of_time_steps>15000</number_of_time_steps><frequency_min>0.1</frequency_min><frequency_max>20.0</frequency_max><cells_per_lambda>120</cells_per_lambda><boundary_distance_cells>0</boundary_distance_cells><minimum_spatial_resolution active="true">0.25</minimum_spatial_resolution><relative_final_energy_level>-30.0</relative_final_energy_level></solver></solver_setup></emgine_gui></project></emGine>
