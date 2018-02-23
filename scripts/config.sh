@@ -3,6 +3,6 @@
 # value
 # E.g.,
 # Note the port number after the second (:).
-export http_proxy="http://proxy.vlabs.ac.in:8080"
+export http_proxy="http://pri1superstar%40gmail%2Ecom:network@10.151.0.12:3128/"
 #set your https proxy. Similar to the above.
-export https_proxy="http://proxy.vlabs.ac.in:8080"
+export https_proxy="http://pri1superstar%40gmail%2Ecom:network@10.151.0.12:3128/"
