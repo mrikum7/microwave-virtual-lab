@@ -3,7 +3,7 @@ set_time_limit(0);
 define('DB_HOST','localhost');
 define('DB_USER','root');
 define('DB_PASSWORD','');
-define('DB_DATABASE','virtuallab');
+define('DB_DATABASE','websupp2_virtual');
 define('DB_TYPE','mysql');
 define('CONNECTION_TYPE','normal'); //persist
 
