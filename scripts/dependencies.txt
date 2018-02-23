@@ -1,3 +1,4 @@
 php5
 apache2
 mysql-server
+php5-mysql

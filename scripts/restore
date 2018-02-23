@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DB_NAME1="sandeep4_virtual"
+DB_NAME1="websupp2_virtual"
 VERSION="v1.0.4"
 
 BACKUP_FILE=$1
