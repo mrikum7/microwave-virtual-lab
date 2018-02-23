@@ -9,8 +9,10 @@
 	
 	
 	define('APP_URL',SERVER_URL.APP_FOL);
+	#define('APP_URL','./');
 	define('SERVER_DOC_ROOT',$_SERVER['DOCUMENT_ROOT']);
 	define('APP_DIR',SERVER_DOC_ROOT.APP_FOL);
+	#define('APP_DIR','./');
 	
 	define('IMAGES',APP_URL.'images');
 	define('CSS',APP_URL.'css');
@@ -37,8 +39,8 @@
 	define('UPLOADS_ASSIGNMENT_DIR',APP_DIR.'uploads/assignment/');
 	define('UPLOADS_ASSIGNMENT_URL',APP_URL.'uploads/assignment/');
 	
-	define('UPLOADS_PROMO_SPACES_DIR',APP_DIR.'uploads/promo_spaces/');
-	define('UPLOADS_PROMO_SPACES_URL',APP_URL.'uploads/promo_spaces/');
+	define('UPLOADS_PROMO_SPACES_DIR','./uploads/promo_spaces/');
+	define('UPLOADS_PROMO_SPACES_URL','./uploads/promo_spaces/');
 	
 	define('UPLOADS_EQUIPMENTS_URL',APP_URL.'uploads/equipments/');
 	define('UPLOADS_EQUIPMENTS_DIR',APP_DIR.'uploads/equipments/');
