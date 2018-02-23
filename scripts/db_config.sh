@@ -3,6 +3,7 @@
 # To avoid prompt for user credentials
 export DEBIAN_FRONTEND=noninteractive
 apt-get -q -y install mysql-server
+apt-get php5-mysql -y
 # mysql -u root -Bse "create database YOUR_DATABASE_NAME;"
 mysql -u root -Bse "create database websupp2_virtual;"
 cd ../src/database
